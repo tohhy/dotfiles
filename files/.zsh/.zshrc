@@ -226,3 +226,6 @@ fi
 alias emacs-server="emacs --daemon"
 alias em="emacsclient -nw"
 alias emacsc="emacsclient -nw"
+
+# local settings
+source .zshrc.local

@@ -1,1 +1,1 @@
-
+source .zshenv.local
