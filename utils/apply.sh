@@ -11,7 +11,7 @@ then
 
     for file in ${files[@]}
     do
-        cp -rb $file ~/
+        cp -r $file ~/
     done
 else
      echo "Applying cancelled."

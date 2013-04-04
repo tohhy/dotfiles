@@ -44,13 +44,13 @@ setopt hist_expand
 #
 # 履歴設定
 #
-HISTFILE=${HOME}/.zsh/.zsh_history
+HISTFILE=${HOME}/.zsh/history/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 
 setopt hist_ignore_dups    # 重複した履歴を保存しない
-setopt hist_ignore_space    # スペースで始まるコマンドを保存しない
-setopt share_history    # 履歴を共有する
+setopt hist_ignore_space   # スペースで始まるコマンドを保存しない
+setopt share_history       # 履歴を共有する
 setopt extended_history    # zshの開始終了を記録
 
 # 履歴検索
