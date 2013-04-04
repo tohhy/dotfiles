@@ -7,6 +7,3 @@
 # gitignore for bash
 .bash_history
 
-# gitignore for zsh
-.zcompdump
-.zsh_history*
