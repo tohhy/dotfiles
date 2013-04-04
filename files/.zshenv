@@ -1,0 +1,2 @@
+### ~/.zshenv
+source ~/.zsh/.zshenv
