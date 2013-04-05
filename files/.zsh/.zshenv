@@ -1,1 +1,1 @@
-source .zshenv.local
+source ~/.zsh/.zshenv.local

@@ -225,7 +225,7 @@ fi
 # エイリアス
 alias emacs-server="emacs --daemon"
 alias em="emacsclient -nw"
-alias emacsc="emacsclient -nw"
+alias ec="emacsclient -nw"
 
 # local settings
-source .zshrc.local
+source ~/.zsh/.zshrc.local
