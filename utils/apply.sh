@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 pwd
 
@@ -13,6 +13,10 @@ then
     do
         cp -r $file ~/
     done
+    touch ~/.zsh/.zshrc.local
+    touch ~/.zsh/.zshenv.local
+    mkdir ~/.zsh/history/
+    mkdir ~/.vim/
 else
      echo "Applying cancelled."
 fi
