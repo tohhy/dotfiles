@@ -1,43 +1,37 @@
+
+# general
+target/
+bin/
+
 # Java
 *.class
-*.jar
-*.war
-*.ear
 
 # Scala, sbt
-*.log
 dist/*
-target/
 lib_managed/
 src_managed/
 project/boot/
 project/plugins/project/
 .scala_dependencies
 
+# ruby
+.sass-cache/
+
 # Python
 *.py[co]
 *.egg
 *.egg-info
-*.EGG
-*.EGG-INFO
 dist
-build
 eggs
 fake-eggs
-parts
-bin
-var
 sdist
 develop-eggs
-downloads
 .installed.cfg
 .mr.developer.cfg
 *.mo
 
 # eclipse and its plugins
-.project
 *.pydevproject
-.project
 .metadata
 bin/**
 tmp/**
@@ -60,7 +54,4 @@ memo.txt
 todo.txt
 TODO.txt
 
-# vcs
-.hg
-.bzr
-.svn
+
