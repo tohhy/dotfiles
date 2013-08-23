@@ -39,8 +39,6 @@ setopt complete_aliases
 # 補完時にヒストリを自動的に展開する
 setopt hist_expand
 
-
-
 #
 # 履歴設定
 #
@@ -70,7 +68,6 @@ bindkey "^n" history-beginning-search-forward-end
 bindkey "??ep" history-beginning-search-backward-end
 bindkey "??en" history-beginning-search-forward-end
 zmodload zsh/complist
-
 
 # auto change directory
 #
@@ -119,21 +116,6 @@ function cdup(){
 }
 zle -N cdup
 bindkey '\^\^' cdup
-
-# 引数の検索ワードで google 検索 (日本語可)
-function google() {
-  local str opt
-  if [ $# != 0 ]; then # 引数が存在すれば
-    for i in $*; do
-      str="$str+$i"
-    done
-    str=`echo $str | sed 's/^\+//'` # 先頭の「+」を削除
-    opt='search?num=50&hl=ja&ie=utf-8&oe=utf-8&lr=lang_ja'
-    opt="${opt}&q=${str}"
-  fi
-  w3m http://www.google.co.jp/$opt # 引数がなければ $opt は空
-}
-alias gg=google
 
 #
 # ターミナル設定
@@ -197,25 +179,11 @@ case ${OSTYPE} in
 	    alias ls="ls --color -a";;
 esac
 
-
-#
-# zsh関係の細かな設定
-#
-
 # 出力の行末が改行コードでない場合に最終行が表示されない問題対策
 unsetopt promptcr
 
 # Fix mac tmux bug
 export __CF_USER_TEXT_ENCODING="0x1F5:0x08000100:14"
-
-## python関連の設定
-if [ -f ~/.python/.pythonstartup ]; then
-  export PYTHONSTARTUP=~/.python/.pythonstartup
-fi
-
-## emacs関連の設定
-# zshのキーバインドをemacs風に
-bindkey -e
 
 # emacsから呼ばれた場合の色設定を変更
 if [ "$EMACS" ];then
