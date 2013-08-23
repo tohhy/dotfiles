@@ -1,10 +1,15 @@
-
-# general
+# General
 target/
 bin/
+build/
+*~
 
 # Java
 *.class
+
+# Gradle
+.gradle/
+gradle-app.config
 
 # Scala, sbt
 dist/*
@@ -14,44 +19,27 @@ project/boot/
 project/plugins/project/
 .scala_dependencies
 
-# ruby
+# Ruby
+*.sassc
 .sass-cache/
 
-# Python
-*.py[co]
-*.egg
-*.egg-info
-dist
-eggs
-fake-eggs
-sdist
-develop-eggs
-.installed.cfg
-.mr.developer.cfg
-*.mo
+# Emacs
+\#*\#
+.elc
 
 # eclipse and its plugins
-*.pydevproject
 .metadata
-bin/**
-tmp/**
-tmp/**/*
-*.tmp*
-*.bak
-*.swp
-*~.nib
-*.launch
-local.properties
 .classpath
 .settings/
-.loadpath
 
-# mac
+# Mac
 .DS_Store
+
+# OS
+.Spotlight-V100
+.Trashes
 
 # private
 memo.txt
 todo.txt
 TODO.txt
-
-
