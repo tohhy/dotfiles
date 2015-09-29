@@ -13,7 +13,6 @@ then
     done
     touch ~/.zsh/.zshrc.local
     touch ~/.zsh/.zshenv.local
-    mkdir ~/.zsh/history/
 else
      echo "Applying cancelled."
 fi
