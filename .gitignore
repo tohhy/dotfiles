@@ -7,3 +7,6 @@
 # gitignore for bash
 .bash_history
 
+# keep
+!.gitkeep
+
