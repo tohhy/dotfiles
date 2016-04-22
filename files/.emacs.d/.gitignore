@@ -1,5 +1,25 @@
-# gitignore for emacs.d
-/auto-save-list
-/cache
-/inits/99*
-/anything-c-adaptive-history
+
+#
+# packages
+#
+pkg-*/**
+!pkg-*/.keep
+
+#
+# emacs
+#
+*.elc
+\#*#
+
+#
+# cache
+#
+cache/**
+!cache/.keep
+
+#
+# el-get
+#
+.loaddefs.el
+el-get/test/
+
