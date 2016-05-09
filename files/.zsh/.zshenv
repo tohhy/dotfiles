@@ -5,5 +5,8 @@ export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 # PATHに対してws内の各種ディレクトリを追加
-export PATH=$HOME/ws/utils:$PATH
+export PATH=$HOME/ws/utils:$HOME/ws/local/bin:$PATH
+
+# git-forgot
+export GIT_FORGOT_DIR="$HOME/ws/dev/*"
 

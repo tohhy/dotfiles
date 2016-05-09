@@ -9,7 +9,7 @@ then
 
     for file in ${files[@]}
     do
-        cp -r $file ~/
+        ln -s ~/dotfiles/files/$file ~/$file
     done
     touch ~/.zsh/.zshrc.local
     touch ~/.zsh/.zshenv.local
