@@ -92,7 +92,7 @@
 ;; --------------------------------------------------
 (setq recentf-max-menu-items 10) ; max display
 (setq recentf-max-saved-items 3000) ; max save
-(setq recentf-save-file "~/.emacs.d/etc/.cache/recentf")
+(setq recentf-save-file "~/.emacs.d/cache/recentf")
 (recentf-mode t)
 
 ;; --------------------------------------------------
@@ -100,6 +100,6 @@
 ;; --------------------------------------------------
 (savehist-mode 1)
 (setq history-length 3000)
-(setq savehist-file "~/.emacs.d/etc/.cache/history")
+(setq savehist-file "~/.emacs.d/cache/history")
 
 

@@ -22,4 +22,5 @@ cache/**
 #
 .loaddefs.el
 el-get/test/
+ac-comphist.dat
 

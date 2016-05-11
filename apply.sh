@@ -9,7 +9,12 @@ then
 
     for file in ${files[@]}
     do
-        ln -s ~/dotfiles/files/$file ~/$file
+        echo $file
+        if [ -s "$file" ]; then
+            echo "File $file already exists."
+        else
+            ln -s "~/dotfiles/files/$file" "~/$file"
+        fi
     done
     touch ~/.zsh/.zshrc.local
     touch ~/.zsh/.zshenv.local

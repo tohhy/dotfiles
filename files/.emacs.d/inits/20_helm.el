@@ -10,28 +10,28 @@
 ;; Keybind (run)
 ;; -------------------------------------------------
 
-(global-set-key (kbd "C-;") 'helm-mini)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "C-x C-b") 'helm-buffers-list) ;; C-x b is also
-(global-set-key (kbd "C-x C-r") 'helm-recentf)
-(global-set-key (kbd "C-x C-z") 'helm-resume)
-(global-set-key (kbd "C-x C-g") 'helm-do-ag)
-(global-set-key (kbd "C-x C-a") 'helm-do-ag)
-(global-set-key (kbd "C-c C-s") 'helm-ghq)
+(bind-key "C-;" 'helm-mini)
+(bind-key "M-y" 'helm-show-kill-ring)
+(bind-key "C-x C-r" 'helm-recentf)
+(bind-key "C-x C-z" 'helm-resume)
+(bind-key "C-x C-g" 'helm-do-ag)
+(bind-key "C-x C-a" 'helm-do-ag)
+(bind-key "C-c C-s" 'helm-ghq)
+(bind-key "C-h" 'delete-backward-char)
 
 ;; -------------------------------------------------
 ;; Keybind (while executing helm)
 ;; -------------------------------------------------
-(define-key helm-read-file-map (kbd "C-h") 'delete-backward-char)
-(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
-(define-key helm-read-file-map (kbd "C-f") 'helm-execute-persistent-action)
-(define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
+(bind-key "C-h" helm-read-file-map 'delete-backward-char)
+(bind-key "TAB" helm-read-file-map 'helm-execute-persistent-action)
+(bind-key "C-f" helm-read-file-map 'helm-execute-persistent-action)
+(bind-key "TAB" helm-find-files-map 'helm-execute-persistent-action)
 
 ;; -------------------------------------------------
 ;; Occur
 ;; -------------------------------------------------
-(global-set-key (kbd "C-x C-o") 'helm-occur)
-(define-key isearch-mode-map (kbd "C-o") 'helm-occur-from-isearch)
+(bind-key "C-x C-o" 'helm-occur)
+(bind-key "C-o" isearch-mode-map 'helm-occur-from-isearch)
 
 ;; -------------------------------------------------
 ;; Etc
