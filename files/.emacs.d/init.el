@@ -29,6 +29,13 @@
 (el-get-bundle bind-key)
 (el-get-bundle auto-complete)
 (el-get-bundle helm)
+(el-get-bundle yasnippet)
+(el-get-bundle popwin)
+(el-get-bundle recentf-ext)
+
+; undo
+(el-get-bundle undo-tree)
+(global-undo-tree-mode t)
 
 ; elisp extension
 (el-get-bundle s)
@@ -39,9 +46,22 @@
 ; ui extension
 (el-get-bundle drag-stuff)
 
+; coding
+(el-get-bundle flycheck)
+(el-get-bundle ruby-mode)
+(el-get-bundle coffee-mode)
+(el-get-bundle sass-mode)
+(el-get-bundle slim-mode)
+(el-get-bundle go-mode)
+(el-get-bundle json-mode)
+(el-get-bundle rust-mode)
+(el-get-bundle web-mode)
+(el-get-bundle markdown-mode)
+(el-get-bundle scala-mode2)
+(el-get-bundle auto-complete-clang)
+
 ; etc
 (el-get-bundle exec-path-from-shell)
-
 
 ; init-loader
 (init-loader-load (concat user-emacs-directory "inits"))
