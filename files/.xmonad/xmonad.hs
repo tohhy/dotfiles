@@ -31,14 +31,9 @@ main = do
       modMask = mod4Mask
     , terminal = "urxvt"
     , logHook = myLogHook wsbar
-    , startupHook = myStartupHook
     , layoutHook = toggleLayouts (noBorders Full) $ avoidStruts $ myLayout
     }
     `additionalKeysP` myKeys
-
-myStartupHook = do
-  spawn "albert"
-  spawn "dropbox start"
 
 myKeys =
     [ (mask ++ "M-" ++ [key], screenWorkspace scr >>= flip whenJust (windows . action))
@@ -48,7 +43,7 @@ myKeys =
 
 myLogHook h = dynamicLogWithPP $ wsPP { ppOutput = hPutStrLn h }
 
-myWsBar = "xmobar /home/ssh0/.xmonad/xmobarrc"
+myWsBar = "xmobar ~/.xmonad/xmobarrc"
 
 wsPP = xmobarPP { ppOrder               = \(ws:l:t:_)   -> [ws,t]
                 , ppCurrent             = xmobarColor   colorGreen       colorNormalbg

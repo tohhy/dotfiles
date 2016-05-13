@@ -45,9 +45,9 @@
 ;; --------------------------------------------------
 ;; Auto-save
 ;; --------------------------------------------------
-(require 'auto-save-buffers-enhanced)
-(setq auto-save-buffers-enhanced-interval 0.3) ; 0.3 sec delay
-(auto-save-buffers-enhanced t)
+(require 'real-auto-save)
+(setq real-auto-save-interval 3)
+(add-hook 'find-file-hook 'real-auto-save-mode)
 
 ;; --------------------------------------------------
 ;; Backup file

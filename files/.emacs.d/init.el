@@ -32,6 +32,7 @@
 (el-get-bundle yasnippet)
 (el-get-bundle popwin)
 (el-get-bundle recentf-ext)
+(el-get-bundle real-auto-save)
 
 ; undo
 (el-get-bundle undo-tree)
@@ -48,6 +49,7 @@
 
 ; coding
 (el-get-bundle flycheck)
+(el-get-bundle quickrun)
 (el-get-bundle ruby-mode)
 (el-get-bundle coffee-mode)
 (el-get-bundle sass-mode)
@@ -59,6 +61,7 @@
 (el-get-bundle markdown-mode)
 (el-get-bundle scala-mode2)
 (el-get-bundle auto-complete-clang)
+(el-get-bundle google-c-style)
 
 ; etc
 (el-get-bundle exec-path-from-shell)

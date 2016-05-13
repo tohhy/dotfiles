@@ -22,16 +22,16 @@
 ;; -------------------------------------------------
 ;; Keybind (while executing helm)
 ;; -------------------------------------------------
-(bind-key "C-h" helm-read-file-map 'delete-backward-char)
-(bind-key "TAB" helm-read-file-map 'helm-execute-persistent-action)
-(bind-key "C-f" helm-read-file-map 'helm-execute-persistent-action)
-(bind-key "TAB" helm-find-files-map 'helm-execute-persistent-action)
+(bind-key "C-h" 'delete-backward-char helm-read-file-map)
+(bind-key "TAB" 'helm-execute-persistent-action helm-read-file-map)
+(bind-key "C-f" 'helm-execute-persistent-action helm-read-file-map)
+(bind-key "TAB" 'helm-execute-persistent-action helm-find-files-map)
 
 ;; -------------------------------------------------
 ;; Occur
 ;; -------------------------------------------------
 (bind-key "C-x C-o" 'helm-occur)
-(bind-key "C-o" isearch-mode-map 'helm-occur-from-isearch)
+(bind-key "C-o" 'helm-occur-from-isearch isearch-mode-map)
 
 ;; -------------------------------------------------
 ;; Etc
