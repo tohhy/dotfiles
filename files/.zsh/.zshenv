@@ -8,5 +8,5 @@ eval "$(rbenv init -)"
 export PATH=$HOME/ws/utils:$HOME/ws/local/bin:$PATH
 
 # git-forgot
-export GIT_FORGOT_DIR="$HOME/ws/dev/*"
+export GIT_FORGOT_DIR="$HOME/ws/dev/* $HOME/*"
 
