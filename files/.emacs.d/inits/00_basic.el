@@ -42,12 +42,14 @@
 (set-keyboard-coding-system 'utf-8)
 (set-clipboard-coding-system 'utf-8)
 
+
 ;; --------------------------------------------------
 ;; Auto-save
 ;; --------------------------------------------------
 (require 'real-auto-save)
-(setq real-auto-save-interval 3)
+(setq real-auto-save-interval 1)
 (add-hook 'find-file-hook 'real-auto-save-mode)
+
 
 ;; --------------------------------------------------
 ;; Backup file
@@ -61,8 +63,8 @@
 ;; --------------------------------------------------
 ;; Meta key(Mac)
 ;; --------------------------------------------------
-(when (eq system-type 'darwin)
-  (setq ns-command-modifier (quote meta)))
+;(when (eq system-type 'darwin)
+;  (setq ns-command-modifier (quote meta)))
 
 
 ;; --------------------------------------------------
@@ -80,6 +82,14 @@
 
 
 ;; --------------------------------------------------
+;; Cua mode(enable rectangle selection)
+;; --------------------------------------------------
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
+(define-key global-map (kbd "C-x SPC") 'cua-set-rectangle-mark)
+
+
+;; --------------------------------------------------
 ;; paren mode
 ;; --------------------------------------------------
 (show-paren-mode t)
@@ -92,7 +102,7 @@
 ;; --------------------------------------------------
 (setq recentf-max-menu-items 10) ; max display
 (setq recentf-max-saved-items 3000) ; max save
-(setq recentf-save-file "~/.emacs.d/cache/recentf")
+(setq recentf-save-file (locate-user-emacs-file "cache/recentf"))
 (recentf-mode t)
 
 ;; --------------------------------------------------
@@ -100,6 +110,6 @@
 ;; --------------------------------------------------
 (savehist-mode 1)
 (setq history-length 3000)
-(setq savehist-file "~/.emacs.d/cache/history")
+(setq savehist-file (locate-user-emacs-file "cache/history"))
 
 

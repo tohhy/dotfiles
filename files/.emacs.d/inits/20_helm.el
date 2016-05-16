@@ -11,12 +11,15 @@
 ;; -------------------------------------------------
 
 (bind-key "C-;" 'helm-mini)
+(bind-key "M-x" 'helm-M-x)
 (bind-key "M-y" 'helm-show-kill-ring)
 (bind-key "C-x C-r" 'helm-recentf)
 (bind-key "C-x C-z" 'helm-resume)
 (bind-key "C-x C-g" 'helm-do-ag)
 (bind-key "C-x C-a" 'helm-do-ag)
 (bind-key "C-c C-s" 'helm-ghq)
+(bind-key "C-x C-f" 'helm-find-files)
+(bind-key "C-x b" 'helm-buffers-list)
 (bind-key "C-h" 'delete-backward-char)
 
 ;; -------------------------------------------------

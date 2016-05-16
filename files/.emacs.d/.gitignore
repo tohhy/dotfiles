@@ -16,6 +16,7 @@ pkg-*/**
 #
 cache/**
 !cache/.keep
+smex-items
 
 #
 # el-get

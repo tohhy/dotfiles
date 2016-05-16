@@ -7,6 +7,12 @@ ikn-emacs-d
 使い方
 -----------------------
 
+### お試し利用
+
+    git clone git@gitlab.com:ikn/ikn-emacs-d.git
+    emacs -q -l ikn-emacs-d/init.el
+
+
 ### 初回セットアップ
 
     cd ~

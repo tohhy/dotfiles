@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: nstd
-# key: nstd
+# name: usi
+# key: usi
 # --
-using namespace std;
+using namespace ${1:std};$0

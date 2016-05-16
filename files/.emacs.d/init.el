@@ -1,5 +1,6 @@
 ; パッケージインストール先を隔離可能にする
 ; init.elからの相対パスでパッケージを参照
+; emacs -q -l <init.el>
 (when load-file-name
   (setq user-emacs-directory (file-name-directory load-file-name)))
 
@@ -29,14 +30,18 @@
 (el-get-bundle bind-key)
 (el-get-bundle auto-complete)
 (el-get-bundle helm)
+(el-get-bundle helm-ag)
 (el-get-bundle yasnippet)
-(el-get-bundle popwin)
 (el-get-bundle recentf-ext)
 (el-get-bundle real-auto-save)
+(el-get-bundle direx)
+(el-get-bundle use-package)
+(el-get-bundle sequential-command)
+
 
 ; undo
 (el-get-bundle undo-tree)
-(global-undo-tree-mode t)
+(el-get-bundle undohist)
 
 ; elisp extension
 (el-get-bundle s)
@@ -46,10 +51,16 @@
 
 ; ui extension
 (el-get-bundle drag-stuff)
+(el-get-bundle smex)
+(el-get-bundle popwin)
+(el-get-bundle popup)
+(el-get-bundle expand-region)
+(el-get-bundle highlight-symbol)
 
 ; coding
 (el-get-bundle flycheck)
 (el-get-bundle quickrun)
+(el-get-bundle smartparens)
 (el-get-bundle ruby-mode)
 (el-get-bundle coffee-mode)
 (el-get-bundle sass-mode)
@@ -59,12 +70,20 @@
 (el-get-bundle rust-mode)
 (el-get-bundle web-mode)
 (el-get-bundle markdown-mode)
+(el-get-bundle php-mode)
 (el-get-bundle scala-mode2)
 (el-get-bundle auto-complete-clang)
 (el-get-bundle google-c-style)
 
+; git
+(el-get-bundle git-gutter)
+(el-get-bundle git-commit-mode)
+
 ; etc
 (el-get-bundle exec-path-from-shell)
+(el-get-bundle htmlize)
+(el-get-bundle prodigy)
+(el-get-bundle projectile)
 
 ; init-loader
 (init-loader-load (concat user-emacs-directory "inits"))

@@ -1,12 +1,7 @@
-;;; 15_yasnippet.el
-;; ==================================================
-;; yasnippet.el
-;; ==================================================
 (require 'yasnippet)
 (setq yas-snippet-dirs
-      '("~/.emacs.d/snippets"
-	)
-      )
+      (locate-user-emacs-file "snippets"
+	))
 (yas-global-mode 1)
 
 ;; -------------------------------------------------
