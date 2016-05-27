@@ -1,5 +1,4 @@
-org.gradle.jvmargs=-Xms128m -Xmx256m
+org.gradle.jvmargs=-Xms128m -Xmx512m
 org.gradle.daemon=true
-#m2Repository=file:///Users/tohhy/.m2/repository
-#myRepoPath=file:///Users/tohhy/ws/repos/etc/gh-pages/tohhy-gh-pages/mvn-repo
-#frowsmvnPath=file:///Users/tohhy/ws/repos/etc/gh-pages/frows-gh-pages/mvn-repo
+#snapshotRepositoryPath=file:///home/osabe/.m2/repository
+#repositoryPath=file:///home/osabe/ws/dev/tohhy-gh/mvn-repo
