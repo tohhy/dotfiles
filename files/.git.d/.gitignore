@@ -1,0 +1,12 @@
+# Emacs
+\#*\#
+*~
+.elc
+
+# Mac
+.DS_Store
+
+# OS
+.Spotlight-V100
+.Trashes
+
