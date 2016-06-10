@@ -1,9 +1,0 @@
-"*":
-  core: {}
-  editor:
-    invisibles: {}
-    softWrap: true
-  "exception-reporting":
-    userId: "477b842c-e692-2318-e3bf-1fb97626310e"
-  welcome:
-    showOnStartup: false

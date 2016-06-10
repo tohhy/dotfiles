@@ -63,8 +63,8 @@
 ;; --------------------------------------------------
 ;; Meta key(Mac)
 ;; --------------------------------------------------
-;(when (eq system-type 'darwin)
-;  (setq ns-command-modifier (quote meta)))
+(when (eq system-type 'darwin)
+  (setq ns-command-modifier (quote meta)))
 
 
 ;; --------------------------------------------------

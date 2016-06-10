@@ -11,6 +11,7 @@ import XMonad.Layout.DragPane
 import XMonad.Layout.NoBorders
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.SetWMName
 import XMonad.Util.Run(spawnPipe)
 
 colorBlue      = "#857da9"
@@ -32,6 +33,7 @@ main = do
     , terminal = "urxvt"
     , logHook = myLogHook wsbar
     , layoutHook = toggleLayouts (noBorders Full) $ avoidStruts $ myLayout
+    , startupHook = setWMName "LG3D"
     }
     `additionalKeysP` myKeys
 
