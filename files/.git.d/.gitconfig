@@ -1,0 +1,2 @@
+[core]
+    excludesfile = ~/.git.d/.gitignore
