@@ -13,6 +13,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.SetWMName
 import XMonad.Util.Run(spawnPipe)
+import XMonad.Hooks.EwmhDesktops
 
 colorBlue      = "#857da9"
 colorGreen     = "#88b986"
@@ -28,7 +29,7 @@ myLayout = (spacing 10 $ ResizableTall 1 (3/100) (3/5) [])
 main :: IO ()
 main = do
   wsbar <- spawnPipe myWsBar
-  xmonad $ defaultConfig {
+  xmonad $ ewmh defaultConfig {
       modMask = mod4Mask
     , terminal = "urxvt"
     , logHook = myLogHook wsbar
