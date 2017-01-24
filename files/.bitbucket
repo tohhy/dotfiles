@@ -1,0 +1,6 @@
+[auth]
+username = tohhy
+
+[options]
+scm = 'git'
+protocol = 'ssh'
