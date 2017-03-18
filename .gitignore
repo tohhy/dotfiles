@@ -1,12 +1,4 @@
-# generic settings
 .DS_Store
-
-# local or private files
 *.local
-
-# gitignore for bash
 .bash_history
-
-# keep
 !.gitkeep
-

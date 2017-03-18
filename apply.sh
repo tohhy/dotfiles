@@ -9,7 +9,6 @@ then
 
     for file in ${files[@]}
     do
-        echo $file
         if [ -s "$file" ]; then
             echo "File $file already exists."
         else

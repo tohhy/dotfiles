@@ -3,15 +3,7 @@
 # 環境に依存する設定は~/.zshrcに集約
 # 別環境に移った際にも簡単に設定を持ち込めるように.
 
-#
-# 環境設定
-#
-
-# 文字コードをUTF-8に指定
 export LANG=ja_JP.UTF-8
-
-# 新しく作られたファイルのパーミッションが常に644になるようにする
-umask 022
 
 #
 # 補完設定
@@ -70,7 +62,6 @@ bindkey "??en" history-beginning-search-forward-end
 zmodload zsh/complist
 
 # auto change directory
-#
 setopt auto_cd
 
 # auto directory pushd that you can get dirs list by cd -[tab]
@@ -80,26 +71,19 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 
 # command correct edition before each completion attempt
-#
 setopt correct
 
 # compacked complete list display
-#
 setopt list_packed
 
 # no remove postfix slash of command line
-#
 setopt noautoremoveslash
-
-# 補完時にbeepを鳴らさない
-#
-setopt nolistbeep
 
 # rm * を実行する前に確認
 setopt rm_star_wait
 
 # Auto ls
-function chpwd() { 
+function chpwd() {
     case ${OSTYPE} in
         freebsd*|darwin*)
             ls -G -w;;
@@ -139,7 +123,7 @@ PROMPT="%{${fg[green]}%}%n@%m%%%{${reset_color}%} "
 PROMPT2="%{${fg[green]}%}%_%%%{${reset_color}%} "
 RPROMPT="[%{${fg[blue]}%}%~%{${reset_color}%}]"
 SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
- [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+ [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
         PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
 
 # lsと補完の配色
@@ -170,8 +154,6 @@ jfbterm-color)
     zstyle ':completion:*' list-colors 'di=;36;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
     ;;
 esac
-
-# lsの配色適用エイリアス
 case ${OSTYPE} in
 	freebsd*|darwin*)
 	    alias ls="ls -G -aw";;
@@ -185,15 +167,17 @@ unsetopt promptcr
 # Fix mac tmux bug
 export __CF_USER_TEXT_ENCODING="0x1F5:0x08000100:14"
 
-# emacsから呼ばれた場合の色設定を変更
-if [ "$EMACS" ];then
-  export TERM=Eterm-color
+# 初回シェル時のみ tmux実行
+if [ $SHLVL = 1 ]; then
+  tmux
 fi
 
-# エイリアス
-alias emacs-server="emacs --daemon"
-alias em="emacsclient -nw"
-alias ec="emacsclient -nw"
+alias h=". ~/ws/utils/cd_short"
+alias p="pushd"
+alias pp="popd"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # local settings
 source ~/.zsh/.zshrc.local

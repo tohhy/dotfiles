@@ -4,6 +4,10 @@ source ~/.zsh/.zshenv.local
 export PATH=$HOME/.rbenv/bin:$HOME/.cargo/bin:$PATH
 eval "$(rbenv init -)"
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 # cargo
 export PATH=$HOME/.cargo/bin:$PATH
 
