@@ -33,6 +33,7 @@ main = do
       modMask = mod4Mask
     , terminal = "urxvt"
     , logHook = myLogHook wsbar
+                  >> setWMName "LG3D"
     , layoutHook = toggleLayouts (noBorders Full) $ avoidStruts $ myLayout
     , startupHook = setWMName "LG3D"
     }
