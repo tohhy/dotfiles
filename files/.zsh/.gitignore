@@ -1,4 +1,0 @@
-# gitignore for .zsh
-.zcompdump
-history/
-.zsh_history*

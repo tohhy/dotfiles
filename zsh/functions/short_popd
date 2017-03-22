@@ -1,0 +1,3 @@
+echo
+popd
+zle reset-prompt

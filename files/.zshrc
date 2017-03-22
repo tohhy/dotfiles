@@ -1,2 +1,0 @@
-### ~/.zshrc
-source ~/.zsh/.zshrc

@@ -1,4 +1,4 @@
-source ~/.zsh/.zshenv.local
+#!/bin/zsh
 
 # rbenv
 export PATH=$HOME/.rbenv/bin:$HOME/.cargo/bin:$PATH

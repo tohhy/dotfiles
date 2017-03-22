@@ -1,0 +1,3 @@
+echo
+cd ..
+zle reset-prompt

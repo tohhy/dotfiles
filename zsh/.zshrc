@@ -1,47 +1,106 @@
-### ~/.zsh/.zshrc
-# このファイルには汎用設定を書き込む
-# 環境に依存する設定は~/.zshrcに集約
-# 別環境に移った際にも簡単に設定を持ち込めるように.
-
 export LANG=ja_JP.UTF-8
+
+#
+# Paths
+#
+source $ZDOTDIR/.paths
+
+#
+# zplug
+#
+source ~/.zplug/init.zsh
+zplug "mollifier/cd-bookmark"
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+zplug load --verbose
+
+#
+# cd-bookmark
+#
+export CD_BOOKMARK_FILE="$ZDOTDIR/conf/.cdbookmark"
+
+#
+# Completions
+#
+autoload -U compinit
+compinit -d $ZDOTDIR/conf/.zcompdump
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}' 'm:{a-zA-Z}={A-Za-z} r:|[-_.]=**'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:default' menu select
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
+    /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+
+#
+# History
+#
+HISTFILE=$ZDOTDIR/history/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=100000
+
+#
+# keybinds
+#
+autoload -U bindfunc
+bindfunc '\^\^' short_cdup
+bindfunc '\^\\' short_popd
+
+#
+# Options
+# http://zsh.sourceforge.net/Doc/Release/Options.html
+#
+setopt auto_cd
+setopt auto_pushd
+setopt cdable_vars
+setopt pushd_ignore_dups
+setopt always_to_end
+setopt complete_aliases
+setopt complete_in_word
+setopt list_packed
+setopt list_types
+setopt extended_glob
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_reduce_blanks
+setopt correct
+setopt rm_star_wait
+
+#
+# Hooks
+#
+autoload -U chpwd
+
+#
+# Alias
+#
+alias pd="popd"
+autoload -U cd_extended
+alias h="cd_extended"
+alias ha="cd-bookmark -a"
+alias v="vim"
+
+#
+# Others
+#
+
+# launch tmux if first shell
+if [ $SHLVL = 1 ]; then
+  tmux
+fi
+
 
 #
 # 補完設定
 #
-fpath=(${HOME}/.zsh/functions/Completion ${fpath})
-autoload -U compinit
-compinit -d ${HOME}/.zsh/.zcompdump
 
-# 補完の際に大文字小文字を区別しない
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# カーソルキーで補完候補を選べるようにする
-zstyle ':completion:*:default' menu select
-
-# カーソル位置から補完する
-setopt complete_in_word
-
-# コマンドにsudoをつけても正常に補完できるようにする
-zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
-    /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
-
-# 補完の際にエイリアスのオリジナルコマンドも対象にする
-setopt complete_aliases
 
 # 補完時にヒストリを自動的に展開する
 setopt hist_expand
-
-#
-# 履歴設定
-#
-HISTFILE=${HOME}/.zsh/history/.zsh_history
-HISTSIZE=100000
-SAVEHIST=100000
-
-setopt hist_ignore_dups    # 重複した履歴を保存しない
-setopt hist_ignore_space   # スペースで始まるコマンドを保存しない
-setopt share_history       # 履歴を共有する
-setopt extended_history    # zshの開始終了を記録
 
 # 履歴検索
 autoload -Uz history-search-end
@@ -61,46 +120,6 @@ bindkey "??ep" history-beginning-search-backward-end
 bindkey "??en" history-beginning-search-forward-end
 zmodload zsh/complist
 
-# auto change directory
-setopt auto_cd
-
-# auto directory pushd that you can get dirs list by cd -[tab]
-setopt auto_pushd
-
-# pushdで同じディレクトリを重複してpushしない
-setopt pushd_ignore_dups
-
-# command correct edition before each completion attempt
-setopt correct
-
-# compacked complete list display
-setopt list_packed
-
-# no remove postfix slash of command line
-setopt noautoremoveslash
-
-# rm * を実行する前に確認
-setopt rm_star_wait
-
-# Auto ls
-function chpwd() {
-    case ${OSTYPE} in
-        freebsd*|darwin*)
-            ls -G -w;;
-        linux*)
-            ls --color;;
-    esac
-}
-
-# cd .. with ^^
-function cdup(){
-    echo
-    cd ..
-    zle reset-prompt
-}
-zle -N cdup
-bindkey '\^\^' cdup
-
 #
 # ターミナル設定
 #
@@ -115,16 +134,20 @@ esac
 #
 # 書式・色
 #
-autoload colors
-colors
+autoload -U colors; colors
 
 # プロンプト
 PROMPT="%{${fg[green]}%}%n@%m%%%{${reset_color}%} "
 PROMPT2="%{${fg[green]}%}%_%%%{${reset_color}%} "
-RPROMPT="[%{${fg[blue]}%}%~%{${reset_color}%}]"
 SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
  [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
         PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
+
+# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
+setopt prompt_subst
+autoload rprompt_git_current_branch
+RPROMPT='[`rprompt_git_current_branch`%{${fg[blue]}%}%~%{${reset_color}%}]'
+
 
 # lsと補完の配色
 case "${TERM}" in
@@ -161,23 +184,6 @@ case ${OSTYPE} in
 	    alias ls="ls --color -a";;
 esac
 
-# 出力の行末が改行コードでない場合に最終行が表示されない問題対策
-unsetopt promptcr
-
-# Fix mac tmux bug
-export __CF_USER_TEXT_ENCODING="0x1F5:0x08000100:14"
-
-# 初回シェル時のみ tmux実行
-if [ $SHLVL = 1 ]; then
-  tmux
-fi
-
-alias h=". ~/ws/utils/cd_short"
-alias p="pushd"
-alias pp="popd"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # local settings
 source ~/.zsh/.zshrc.local

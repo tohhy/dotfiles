@@ -1,0 +1,8 @@
+# gitignore for .zsh
+.zcompdump
+/history
+.zsh_history*
+.zshrc.local
+.zshenv.local
+/conf
+!.keep

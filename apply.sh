@@ -9,14 +9,15 @@ then
 
     for file in ${files[@]}
     do
-        if [ -s "$file" ]; then
+        if [ -s "$HOME/$file" ]; then
             echo "File $file already exists."
         else
-            ln -s "~/dotfiles/files/$file" "~/$file"
+            echo "$file linked"
+            ln -s "$HOME/dotfiles/files/$file" "$HOME/$file"
         fi
     done
-    touch ~/.zsh/.zshrc.local
-    touch ~/.zsh/.zshenv.local
+    touch $HOME/dotfiles/zsh/.zshrc.local
+    touch $HOME/dotfiles/zsh/.zshenv.local
 else
      echo "Applying cancelled."
 fi

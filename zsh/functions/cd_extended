@@ -1,0 +1,10 @@
+if [ $# = 0 ]; then
+  cd $HOME
+fi
+if [ $# = 1 ]; then
+  if [ $# = "-l" ]; then
+    cd-bookmark -l
+  else
+    cd-bookmark $1
+  fi
+fi
