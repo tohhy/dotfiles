@@ -186,4 +186,4 @@ esac
 
 
 # local settings
-source ~/.zsh/.zshrc.local
+source $ZDOTDIR/.zshrc.local
