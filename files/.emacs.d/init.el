@@ -90,3 +90,21 @@
 (setq init-loader-show-log-after-init nil)
 
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ac-dictionary-directories
+   (quote
+    ((locate-user-emacs-file "cache/auto-complete-dict"))))
+ '(ac-use-menu-map t)
+ '(flyspell-auto-correct-binding [(control 58)])
+ '(package-selected-packages (quote (sequential-command real-auto-save bind-key)))
+ '(tab-width 4))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

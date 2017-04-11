@@ -184,6 +184,14 @@ case ${OSTYPE} in
 	    alias ls="ls --color -a";;
 esac
 
+# -------------------------------------
+# @see https://hoelz.ro/blog/making-ssh_auth_sock-work-between-detaches-in-tmux
+# -------------------------------------
+if [ ! -z "$SSH_AUTH_SOCK" -a "$SSH_AUTH_SOCK" != "$HOME/.ssh/agent_sock"  ] ; then
+  unlink "$HOME/.ssh/agent_sock" 2>/dev/null
+  ln -s "$SSH_AUTH_SOCK" "$HOME/.ssh/agent_sock"
+  export SSH_AUTH_SOCK="$HOME/.ssh/agent_sock"
+fi
 
 # local settings
 source $ZDOTDIR/.zshrc.local
