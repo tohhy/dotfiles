@@ -78,11 +78,8 @@ autoload -U chpwd
 #
 # Alias
 #
-alias pd="popd"
-autoload -U cd_extended
-alias h="cd_extended"
-alias ha="cd-bookmark -a"
-alias v="vim"
+source $ZDOTDIR/.aliases
+
 
 #
 # Others

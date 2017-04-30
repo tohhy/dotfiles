@@ -1,0 +1,28 @@
+
+alias pp="popd"
+alias psa="ps aux"
+alias chx="chmod +x"
+
+#
+# cd-bookmark
+#
+autoload -U cd_extended
+alias h="cd_extended"
+alias hl="cd-bookmark"
+alias ha="cd-bookmark -a"
+alias he="cd-bookmark -e"
+
+#
+# git
+#
+alias gg="git"
+alias gga="git add"
+alias ggaa="git add -A"
+alias ggs="git status"
+alias ggc="git commit"
+alias ggch="git checkout"
+alias ggps="git push"
+alias ggpl="git pull"
+alias ggl="git log"
+alias ggg="git grep"
+
