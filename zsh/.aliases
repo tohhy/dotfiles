@@ -2,6 +2,7 @@
 alias pp="popd"
 alias psa="ps aux"
 alias chx="chmod +x"
+alias chis='`cat $ZDOTDIR/history/.zsh_history|percol`'
 
 #
 # cd-bookmark
@@ -18,6 +19,7 @@ alias he="cd-bookmark -e"
 alias gg="git"
 alias gga="git add"
 alias ggaa="git add -A"
+alias ggaac="git add -A;git commit"
 alias ggs="git status"
 alias ggc="git commit"
 alias ggch="git checkout"
