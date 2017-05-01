@@ -78,11 +78,8 @@ autoload -U chpwd
 #
 # Alias
 #
-alias pd="popd"
-autoload -U cd_extended
-alias h="cd_extended"
-alias ha="cd-bookmark -a"
-alias v="vim"
+source $ZDOTDIR/.aliases
+
 
 #
 # Others
@@ -97,8 +94,6 @@ fi
 #
 # 補完設定
 #
-
-
 # 補完時にヒストリを自動的に展開する
 setopt hist_expand
 
@@ -110,7 +105,6 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 # historical backward/forward search with linehead string binded to ^P/^N
-#
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
