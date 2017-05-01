@@ -1,7 +1,7 @@
 # when directory changed
 case ${OSTYPE} in
     freebsd*|darwin*)
-        ls -G -w;;
+        ls -a -G -w;;
     linux*)
-        ls --color;;
+        ls -a --color;;
 esac

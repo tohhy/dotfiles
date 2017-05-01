@@ -18,7 +18,7 @@ if ! zplug check --verbose; then
         echo; zplug install
     fi
 fi
-zplug load --verbose
+zplug load
 
 #
 # cd-bookmark
@@ -49,6 +49,7 @@ SAVEHIST=100000
 autoload -U bindfunc
 bindfunc '\^\^' short_cdup
 bindfunc '\^\\' short_popd
+bindfunc '\^-' chis
 
 #
 # Options
