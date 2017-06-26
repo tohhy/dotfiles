@@ -4,6 +4,7 @@ export LANG=ja_JP.UTF-8
 # Paths
 #
 source $ZDOTDIR/.paths
+export FPATH="${HOME}/dotfiles/zsh/functions:${FPATH}"
 
 #
 # zplug

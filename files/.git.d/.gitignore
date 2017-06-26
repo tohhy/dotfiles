@@ -10,3 +10,5 @@
 .Spotlight-V100
 .Trashes
 
+# intellij
+.idea/
