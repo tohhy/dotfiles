@@ -30,7 +30,7 @@ main :: IO ()
 main = do
   wsbar <- spawnPipe myWsBar
   xmonad $ ewmh defaultConfig {
-      modMask = mod4Mask
+    modMask = mod4Mask
     , terminal = "urxvt"
     , logHook = myLogHook wsbar
                   >> setWMName "LG3D"

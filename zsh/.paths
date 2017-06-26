@@ -17,5 +17,10 @@ export PATH=$HOME/ws/utils:$HOME/ws/local/bin:$PATH
 # git-forgot
 export GIT_FORGOT_DIR="$HOME/ws/dev/* $HOME/*"
 
+# go
+export GOPATH="$HOME/.go"
+export GOROOT="$HOME/ws/local/go"
+export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
+
 # racer
 export RUST_SRC_PATH="$HOME/ws/local/rust/src"
