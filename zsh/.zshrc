@@ -24,7 +24,7 @@ zplug load
 #
 # cd-bookmark
 #
-export CD_BOOKMARK_FILE="$ZDOTDIR/conf/.cdbookmark"
+export CD_BOOKMARK_FILE="$ZDOTDIR/conf/cdbookmark"
 
 #
 # Completions
@@ -80,7 +80,7 @@ autoload -U chpwd
 #
 # Alias
 #
-source $ZDOTDIR/.aliases
+source $ZDOTDIR/aliases
 
 
 #
@@ -91,7 +91,6 @@ source $ZDOTDIR/.aliases
 if [ $SHLVL = 1 ]; then
   tmux
 fi
-
 
 #
 # 補完設定
@@ -144,7 +143,6 @@ setopt prompt_subst
 autoload rprompt_git_current_branch
 RPROMPT='[`rprompt_git_current_branch`%{${fg[blue]}%}%~%{${reset_color}%}]'
 
-
 # lsと補完の配色
 case "${TERM}" in
 xterm|xterm-color)
@@ -157,9 +155,6 @@ kterm-color)
     export LSCOLORS=exfxcxdxbxegedabagacad
     export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
     zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-    ;;
-kterm)
-    stty erase '^H'
     ;;
 cons25)
     unset LANG

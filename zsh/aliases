@@ -1,0 +1,42 @@
+alias chis='`cat $ZDOTDIR/history/.zsh_history|percol`'
+alias trim="tr -d ' '|tr -d '\n'"
+#
+# cd-bookmark
+#
+autoload -U cd_extended
+alias h="cd_extended"
+alias hl="cd-bookmark"
+alias ha="cd-bookmark -a"
+alias he="cd-bookmark -e"
+
+#
+# git
+#
+alias g-add="git add"
+alias g-add-all="git add -A"
+alias g-add-commit="git add -A;git commit"
+alias g-current-branch="git rev-parse --abbrev-ref HEAD|trim|pbcopy"
+alias g-branch-new="git checkout -b"
+alias g-checkout="git checkout"
+alias g-checkout-branch="git branch|percol|xargs git checkout"
+alias g-checkout-master="git checkout master"
+alias g-checkout-origin="git reset --hard origin/$1"
+alias g-commit="git commit"
+alias g-diff="git diff"
+alias g-fresh-checkout="git stash -u && git fetch && git checkout"
+alias g-fresh-reset="git stash -u && git fetch && git reset --hard"
+alias g-gc="git gc"
+alias g-gc-full="git gc --aggressive"
+alias g-grep="git grep"
+alias g-push="git push"
+alias g-pull="git pull --prune"
+alias g-log="git log"
+alias g-rebase-master="git fetch && git rebase origin/master"
+alias g-refresh="git fetch && git pull --prune"
+alias g-reset-recent-commit="git reset \"HEAD^\""
+alias g-search-branch="git branch|percol|tr -d '*'|trim|pbcopy"
+alias g-search-files="git ls-files|percol|trim|pbcopy"
+alias g-stash="git stash -u"
+alias g-status="git status"
+alias g-unstage="git reset HEAD"
+
