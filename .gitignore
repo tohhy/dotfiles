@@ -1,4 +1,4 @@
 .DS_Store
 *.local
-.bash_history
+files/.vscode/extensions
 !.gitkeep

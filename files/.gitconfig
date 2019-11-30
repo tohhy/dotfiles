@@ -1,0 +1,22 @@
+[color]
+	ui = true
+[user]
+	name = tohhy
+	email = tohhy@pixiv.com
+[core]
+    editor = vim
+    excludesfile = /Users/tohhy/.git.d/.gitignore
+[alias]
+    conflicts = !git ls-files -u | cut -f 2 | sort -u
+    refresh = !git fetch && !git pull
+    refresh-master = !git checkout master && !git pull --prune
+    new-branch = !git checkout -b
+[gc]
+	pruneExpire = 1.week.ago
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[http]
+	cookiefile = /Users/tohhy/.gitcookies

@@ -1,4 +1,0 @@
-org.gradle.jvmargs=-Xms128m -Xmx512m
-org.gradle.daemon=true
-#snapshotRepositoryPath=file:///home/osabe/.m2/repository
-#repositoryPath=file:///home/osabe/ws/dev/tohhy-gh/mvn-repo
