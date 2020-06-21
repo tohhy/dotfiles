@@ -1,18 +1,10 @@
 export LANG=ja_JP.UTF-8
 
-#
-# Paths
-#
 source $ZDOTDIR/.paths
 export FPATH="${HOME}/dotfiles/zsh/functions:${FPATH}"
 
-#
-# zplug
-#
 source ~/.zplug/init.zsh
 zplug "mollifier/cd-bookmark"
-
-# Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
